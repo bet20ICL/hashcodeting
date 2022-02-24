@@ -1,4 +1,5 @@
 class person:
+
     def __init__(self, name):
         self.name = name
         self.skills = {}
@@ -7,6 +8,8 @@ class person:
         for i in self.skills.items():
             print(i)
 
+
+
 class project:
     def __init__(self, name, duration, score, deadline):
         self.name = name
@@ -14,6 +17,7 @@ class project:
         self.duration = duration
         self.deadline = deadline
         self.roles = {}
+        self.workers = {}
     def print(self):
         print(self.name, "score:" + self.score, "duration:" + self.duration, "deadline:" + self.deadline)
         for i in self.roles.items():
@@ -47,6 +51,7 @@ for i in range(int(tmp[1])):
         tmpa.roles[rline[0]] = rline[1]
     projects.append(tmpa)
 
+projects.sort(key=lambda x: x.score, reverse=True)
+
 for i in projects:
     i.print()
-
